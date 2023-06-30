@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/accessibilityPermissionFragment">
+
+    <fragment
+        android:id="@+id/postListFragment"
+        android:name="com.example.innobuzztask.PostListFragment"
+        android:label="fragment_post_list"
+        tools:layout="@layout/fragment_post_list" >
+        <action
+            android:id="@+id/action_postListFragment_to_postDetailFragment"
+            app:destination="@id/postDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailFragment"
+        android:name="com.example.innobuzztask.PostDetailFragment"
+        android:label="fragment_post_detail"
+        tools:layout="@layout/fragment_post_detail" />
+    <fragment
+        android:id="@+id/accessibilityPermissionFragment"
+        android:name="com.example.innobuzztask.AccessibilityPermissionFragment"
+        android:label="fragment_accessibility_permission"
+        tools:layout="@layout/fragment_accessibility_permission" >
+        <action
+            android:id="@+id/action_accessibilityPermissionFragment_to_postListFragment"
+            app:destination="@id/postListFragment"
+            app:popUpTo="@id/accessibilityPermissionFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>
